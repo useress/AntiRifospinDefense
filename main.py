@@ -11,9 +11,6 @@ chat_id = '~'
 ANSWERS = ['ну ой ой ой', '🤡', '"я больше не буду парить вам мозги"', 'топ 100 адекватности, просто удача -100',
            'надоело гэта слухаць', 'fired.gif', 'emoji-drop.gif', 'brainbang.gif', 'kekw.gif']
 
-def generate_answer(mes: str):
-       pass 
-
 @client.on(events.NewMessage(chats=chat_id))
 async def handle_new_message(event: events):
     sender = await event.get_sender()
