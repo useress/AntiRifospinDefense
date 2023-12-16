@@ -2,9 +2,9 @@ from telethon.sync import TelegramClient, events
 from random import randint
 
 # '~' == your info
-api_id = 25655106
-api_hash = 'd7293f5b1b6277b7b4230dc71fcab1de'
-phone_number = '+375256081568'
+api_id = '~'
+api_hash = '~'
+phone_number = '~'
 client = TelegramClient(phone_number, api_id, api_hash)
 chat_id = int(input())
 friend_id = int(input())
