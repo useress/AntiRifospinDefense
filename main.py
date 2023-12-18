@@ -1,6 +1,6 @@
 from telethon.sync import TelegramClient, events
 from random import randint
-import asyncio
+
 
 # '~' == your info
 api_id = '~'
@@ -13,7 +13,7 @@ chat_id = int(a[0])
 friend_id = int(a[1])
 
 ANSWERS = ['ну ой ой ой', '🗿', '"я больше не буду парить вам мозги"', 'топ 100 адекватности, просто удача -100',
-           'надоело гэта слухаць', 'fired.gif', 'emoji-drop.gif', 'brainbang.gif', 'kekw.gif']
+           'надоело гэта слухаць', 'молодец', 'fired.gif', 'emoji-drop.gif', 'brainbang.gif', 'kekw.gif']
 
 @client.on(events.NewMessage(chats=chat_id))
 async def handle_new_message(event: events):
@@ -28,11 +28,8 @@ async def handle_new_message(event: events):
              await event.reply(mes)
         
 
-async def main():
-    async with client:
-        client.add_event_handler(handle_new_message, events.NewMessage(chats=chat_id))
-        await client.run_until_disconnected()
+
 
 if __name__ == "__main__":
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    client.start()
+    client.run_until_disconnected()
